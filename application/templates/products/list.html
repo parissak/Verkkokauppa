@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<table>
+  <tr>
+    <th>Product</th>
+    <th>Price</th>
+    <th>Description</th>
+  </tr>
+  {% for product in products %}
+  <tr>
+    <td>{{ product.name }}</td>
+    <td>{{ product.price }}</td>
+    <td>{{ product.description }}</td>
+    <td>
+      <form method="POST" action="{{ url_for('products_set_description', 
+      product_id=product.id) }}">
+        <input type="text" name=newdesc placeholder="insert a new description" />
+        <input type="submit" value=&#9998; />
+      </form>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

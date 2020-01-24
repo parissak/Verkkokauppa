@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+  
+{% block body %}
+<form method="POST" action="{{ url_for('products_create') }}">
+  <input type="text" name="name" placeholder="insert name"/>
+  <input type="text" name="price" placeholder="insert price"/>
+  <input type="text" name="description" placeholder="insert description"/>
+  <input type="submit" value="Add a new product"/>
+
+  
+</form>
+{% endblock %}
+
