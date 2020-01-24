@@ -17,7 +17,7 @@ Työn lopputuloksen on tarkoitus toimia ostajan ja myyjän välisenä verkkokaup
 * Mahdollisuus tehdä huutoja tuotteesta, eli huutokaupan yhdistäminen alustaan.
 
 ## Tietokantakaavio
-![](https://github.com/parissak/Verkkokauppa/blob/master/kuvat/Untitled%20Diagram.jpg)
+![](https://github.com/parissak/Verkkokauppa/blob/master/documentation/kuvat/Untitled%20Diagram.jpg)
 
 
 
