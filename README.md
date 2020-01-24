@@ -16,7 +16,9 @@ Työn lopputuloksen on tarkoitus toimia ostajan ja myyjän välisenä verkkokaup
 * Mahdollisuus tehdä huutoja tuotteesta, eli huutokaupan yhdistäminen alustaan.
 
 ## Tietokantakaavio
-[Tietokantakaavio](https://github.com/parissak/Verkkokauppa/blob/master/kuvat/Untitled%20Diagram.jpg)
+![GitHub Logo](https://github.com/parissak/Verkkokauppa/blob/master/kuvat/Untitled%20Diagram.jpg)
+
+
 
 ## Sovellus Herokussa:
 [linkki](https://salty-thicket-26582.herokuapp.com/)
