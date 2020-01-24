@@ -17,3 +17,7 @@ Työn lopputuloksen on tarkoitus toimia ostajan ja myyjän välisenä verkkokaup
 
 ## Tietokantakaavio
 [Tietokantakaavio](https://github.com/parissak/Verkkokauppa/blob/master/kuvat/Untitled%20Diagram.jpg)
+
+## Sovellus Herokussa:
+[linkki](https://salty-thicket-26582.herokuapp.com/)
+
