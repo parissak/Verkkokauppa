@@ -1,13 +1,79 @@
 {% extends "layout.html" %}
-  
+
 {% block body %}
 <form method="POST" action="{{ url_for('products_create') }}">
-  <input type="text" name="name" placeholder="insert name"/>
-  <input type="text" name="price" placeholder="insert price"/>
-  <input type="text" name="description" placeholder="insert description"/>
-  <input type="submit" value="Add a new product"/>
 
-  
+	<table>
+		<tr>
+			<td>
+				<b>{{ form.name.label }} </b>
+			</td>
+			<td>
+				{{ form.name}}
+			</td>
+			<td>
+				<ul>
+					{% for error in form.name.errors %}
+					<li>{{ error }}</li>
+					{% endfor %}
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p>Required. Name must be between 2 and 20 characters long.</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<b>{{ form.price.label }}</b>
+			</td>
+			<td>
+				{{ form.price }}
+			</td>
+			<td>
+				<ul>
+					{% for error in form.price.errors %}
+					<li>{{ error }}</li>
+					{% endfor %}
+				</ul>
+			</td>
+
+		</tr>
+		<tr>
+			<td>
+			<p>Required. Insert a price for the product.</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<b>{{ form.description.label }}</b>
+			</td>
+			<td>
+				{{ form.description }}
+			</td>
+			<td>
+				<ul>
+					{% for error in form.description.errors %}
+					<li>{{ error }}</li>
+					{% endfor %}
+				</ul>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<p> Optional. Description must be below 30 characters.</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td colspan="2">
+				<input type="submit" value="Add a new product" />
+			<td>
+		</tr>
+
 </form>
 {% endblock %}
-
