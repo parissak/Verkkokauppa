@@ -1,6 +1,6 @@
+from flask import redirect, render_template, request, url_for
 
 from application import app, db
-from flask import redirect, render_template, request, url_for
 from application.products.models import Product
 from application.products.forms import ProductForm
 
@@ -38,7 +38,6 @@ def products_create():
     product = Product(form.name.data, form.price.data, 
     form.description.data)
 
-  
     db.session().add(product)
     db.session().commit()
 
