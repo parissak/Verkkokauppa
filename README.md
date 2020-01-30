@@ -26,5 +26,6 @@ Työn lopputuloksen on tarkoitus toimia ostajan ja myyjän välisenä verkkokaup
 
 ### Rekisteröity Testitunnus 
 Username: hello
+
 Password: world
 
