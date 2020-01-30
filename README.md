@@ -24,8 +24,6 @@ Työn lopputuloksen on tarkoitus toimia ostajan ja myyjän välisenä verkkokaup
 ## Sovellus Herokussa:
 [linkki](https://salty-thicket-26582.herokuapp.com/)
 
-### Rekisteröity Testitunnus 
-Username: hello
-
-Password: world
+### Rekisteröity testitunnus 
+Username: hello Password: world
 
