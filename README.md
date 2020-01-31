@@ -3,11 +3,10 @@
 ## Tarkoitus
 Työn lopputuloksen on tarkoitus toimia ostajan ja myyjän välisenä verkkokauppa-alustana. Alustan kautta myyjä voisi ilmoittaa tuotteen myyntiin ja vastaavasti asiakas ostaa sen. Alusta siis jäljittelee esimerkiksi Ebay:n vastaavaa - ilman huutokaupan ominaisuutta. 
 
-## Toiminnallisuudet
+## Toteutetut toiminnallisuudet
 * Käyttäjän rekisteröityminen ja kirjautuminen.
-* Käyttäjätietojen muuttaminen ja poistaminen.
 * Tuotteiden lisääminen alustalle.
-* Tuotteiden tietojen muokkaus (mukaanlukien poisto, poislukien nimen muutos).
+* Tuotteiden tietojen muokkaus.
 * Tuotteiden listaaminen.
 
 ## Käyttötapaukset
