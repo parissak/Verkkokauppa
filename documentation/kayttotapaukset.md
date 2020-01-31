@@ -4,3 +4,4 @@
 * Käyttäjänä voin tarkastella myynnissä olevia tuotteita.
 * Käyttäjänä voin lisätä tuotteita sivustolle ja vastaavasti poistaa tuotteen sivustolta. 
 * Käyttäjänä voin muuttaa tuotteeni tietoja nimeä lukuunottamatta.
+* Käyttäjänä voin ostaa tai tilata tuotteen alustan kautta.
