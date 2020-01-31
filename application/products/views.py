@@ -1,5 +1,5 @@
 from flask import redirect, render_template, request, url_for
-from flask_login import current_user
+from flask_login import current_user, login_required
 
 from application import app, db
 from application.products.models import Product
@@ -12,11 +12,13 @@ def products_index():
 
 # new
 @app.route("/products/new/")
+@login_required
 def products_form():
     return render_template("products/new.html", form = ProductForm())
 
 # delete
 @app.route("/products/<product_id>/", methods=["POST"])
+@login_required
 def products_delete(product_id):
     product = Product.query.get(product_id)
     db.session.delete(product)
@@ -26,6 +28,7 @@ def products_delete(product_id):
 
 # change description
 @app.route("/products/<product_id>/", methods=["POST"])
+@login_required
 def products_set_description(product_id):
 
     product = Product.query.get(product_id)
@@ -39,6 +42,7 @@ def products_set_description(product_id):
 
 # post product
 @app.route("/products/", methods=["POST"])
+@login_required
 def products_create():
     form = ProductForm(request.form)
 
