@@ -17,6 +17,7 @@ else:
 db = SQLAlchemy(app)
 
 # sovelluksen toiminnallisuudet
+
 from application import views
 
 from application.products import models

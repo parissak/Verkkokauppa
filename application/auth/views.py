@@ -1,5 +1,8 @@
 from flask import render_template, request, redirect, url_for, flash
 from flask_login import login_user, logout_user
+from flask_login import current_user, login_required
+
+from sqlalchemy.sql import text
 
 from application import app, db
 from application.auth.models import User
@@ -11,7 +14,6 @@ def auth_login():
         return render_template("auth/loginform.html", form = LoginForm())
 
     form = LoginForm(request.form)
-    # mahdolliset validoinnit
 
     user = User.query.filter_by(username=form.username.data, password=form.password.data).first()
 
@@ -46,3 +48,20 @@ def auth_registration_create():
     db.session().commit()
 
     return redirect(url_for("index"))
+
+# return user page
+@app.route("/auth/user")
+@login_required
+def auth_user():
+    u = current_user
+    user_id = current_user.id
+    print(user_id)
+
+    stmt = text("SELECT COUNT(product.name) FROM Account" 
+    " JOIN product on account.id = account_id WHERE Account.id = :x")
+    stmt = stmt.bindparams(x = user_id)
+    res = db.engine.execute(stmt).fetchone()
+
+    item_count = res[0]
+
+    return render_template("auth/user.html", item_count=item_count, user = u)

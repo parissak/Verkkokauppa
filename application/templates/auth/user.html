@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<h2>Profile</h2>
+
+<table style="margin-bottom: 30px;">
+  <tr>
+    <td style="padding: 5px 70px 5px 0px"><b>Name</b></td>
+    <td>{{ user.name }}</td>
+  </tr>
+  <tr>
+    <td style="padding: 5px 70px 5px 0px;"><b>Username</b></td>
+    <td>{{ user.username }}</td>
+  </tr>
+</table>
+
+<h2>My Products</h2>
+<p>Selling {{ item_count }} items</p>
+
+<table cellpadding="10">
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Description</th>
+  </tr>
+  {% for product in user.products %}
+  <tr>
+    <td>{{ product.name }}</td>
+    <td>{{ product.price }}</td>
+    <td>{{ product.description }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock %}

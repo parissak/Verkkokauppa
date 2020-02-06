@@ -1,14 +1,11 @@
 from application import db
+from application.models import Base
+from sqlalchemy.sql import text
 
-class User(db.Model):
+class User(Base):
 
     __tablename__ = "account"
-  
-    id = db.Column(db.Integer, primary_key=True)
-    date_created = db.Column(db.DateTime, default=db.func.current_timestamp())
-    date_modified = db.Column(db.DateTime, default=db.func.current_timestamp(),
-                              onupdate=db.func.current_timestamp())
-
+   
     name = db.Column(db.String(144), nullable=False)
     username = db.Column(db.String(144), nullable=False)
     password = db.Column(db.String(144), nullable=False)
@@ -31,3 +28,13 @@ class User(db.Model):
 
     def is_authenticated(self):
         return True
+
+    @staticmethod
+    def items_on_sale():
+         stmt = text("SELECT username, COUNT(product.name) FROM Account"
+         " JOIN product ON account.id = account_id WHERE username = User.username")
+         res = db.engine.execute(stmt)
+
+         return res
+
+
