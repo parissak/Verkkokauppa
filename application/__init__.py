@@ -1,9 +1,8 @@
-# flask-sovellus
 from flask import Flask
 app = Flask(__name__)
 
-# tietokanta
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import event
 
 import os
 
@@ -19,6 +18,8 @@ db = SQLAlchemy(app)
 # sovelluksen toiminnallisuudet
 
 from application import views
+
+from application.categories import models
 
 from application.products import models
 from application.products import views

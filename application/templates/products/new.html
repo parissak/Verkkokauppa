@@ -43,7 +43,7 @@
 		</tr>
 		<tr>
 			<td>
-			<p>Required. Insert a price for the product.</p>
+				<p>Required. Insert a price for the product.</p>
 			</td>
 		</tr>
 
@@ -62,10 +62,29 @@
 				</ul>
 			</td>
 		</tr>
-
 		<tr>
 			<td>
 				<p> Optional. Description must be below 30 characters.</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<b>Category</b>
+			</td>
+			<td>
+
+					<select name="select">
+						{% for category in categories %}
+						<option value="{{category.name}}">{{category.name}}</option>
+						{% endfor %}
+					</select>
+
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p> Required. Choose a category from the dropdown menu.</p>
 			</td>
 		</tr>
 

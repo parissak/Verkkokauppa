@@ -53,15 +53,7 @@ def auth_registration_create():
 @app.route("/auth/user")
 @login_required
 def auth_user():
-    u = current_user
-    user_id = current_user.id
-    print(user_id)
-
-    stmt = text("SELECT COUNT(product.name) FROM Account" 
-    " JOIN product on account.id = account_id WHERE Account.id = :x")
-    stmt = stmt.bindparams(x = user_id)
-    res = db.engine.execute(stmt).fetchone()
-
-    item_count = res[0]
+    u = current_user  
+    item_count = User.count_items(current_user.id)
 
     return render_template("auth/user.html", item_count=item_count, user = u)

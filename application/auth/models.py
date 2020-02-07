@@ -1,5 +1,6 @@
 from application import db
 from application.models import Base
+
 from sqlalchemy.sql import text
 
 class User(Base):
@@ -30,11 +31,12 @@ class User(Base):
         return True
 
     @staticmethod
-    def items_on_sale():
-         stmt = text("SELECT username, COUNT(product.name) FROM Account"
-         " JOIN product ON account.id = account_id WHERE username = User.username")
-         res = db.engine.execute(stmt)
+    def count_items(users_id):
+        stmt = text("SELECT COUNT(product.name) FROM Account" 
+        " JOIN product on account.id = account_id WHERE" 
+        " Account.id = :x").params(x = users_id)
 
-         return res
+        res = db.engine.execute(stmt).fetchone()
 
-
+        item_count = res[0]
+        return item_count
