@@ -21,7 +21,7 @@ def products_form():
     return render_template("products/new.html", form = ProductForm(), categories = Category.query.all())
 
 # delete
-@app.route("/products/<product_id>/", methods=["POST"])
+@app.route("/products/<product_id>_delete/", methods=["POST"])
 @login_required
 def products_delete(product_id):
     product = Product.query.get(product_id)
@@ -31,15 +31,15 @@ def products_delete(product_id):
     return redirect(url_for("products_index"))
 
 # change description
-@app.route("/products/<product_id>/", methods=["POST"])
+@app.route("/products/<product_id>_change/", methods=["POST"])
 @login_required
 def products_set_description(product_id):
 
     product = Product.query.get(product_id)
-    new_value = request.form.get("newdesc")
+    new = request.form.get("newdesc")
     
-    if new_value:
-        product.description = new_value
+    if new:
+        product.description = new
         db.session().commit()
   
     return redirect(url_for("products_index"))
