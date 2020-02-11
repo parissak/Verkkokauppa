@@ -2,7 +2,7 @@
 
 {% block body %}
 
-<h2>Profile</h2>
+<h1>Profile</h1>
 
 <table style="margin-bottom: 30px;">
   <tr>
@@ -12,6 +12,10 @@
   <tr>
     <td style="padding: 5px 70px 5px 0px;"><b>Username</b></td>
     <td>{{ user.username }}</td>
+  </tr>
+  <tr>
+    <td style="padding: 5px 70px 5px 0px;"><b>Member since</b></td>
+    <td>{{ user.date_created }}</td>
   </tr>
 </table>
 

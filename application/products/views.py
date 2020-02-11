@@ -4,16 +4,33 @@ from flask_login import current_user, login_required
 from application import app, db
 from application.products.models import Product
 from application.categories.models import Category
+
 from application.products.forms import ProductForm
+#from application.products.forms import SearchForm
 
 from sqlalchemy.sql import text
+
+# searchfield
+#@app.route('/products', methods=['GET','POST'])
+#def search_products():
+#    search = SearchForm(request.form)
+#    if request.method == 'POST':
+#        return search_results(search)
+
+#   return render_template('products/list.html', form=search, products = Product.query.all())
+
+#tobeimplemented
+# search
+#@app.route("/results")
+#def search_results():
+#    return render_template("products/list.html")
 
 
 # list
 @app.route("/products", methods=["GET"])
 def products_index():
     return render_template("products/list.html", products = Product.query.all())
-
+    
 # new
 @app.route("/products/new/")
 @login_required

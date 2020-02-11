@@ -9,3 +9,7 @@ class ProductForm(FlaskForm):
  
     class Meta:
         csrf = False
+
+# tobeimplemented
+#class SearchForm(FlaskForm):
+#    search = StringField("Name")

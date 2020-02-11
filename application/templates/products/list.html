@@ -1,10 +1,19 @@
 {% extends "layout.html" %}
 
 {% block body %}
-<h1>WebStore</h1>
 
+<div class="container">
+  <div class="pb-2 mt-5 mb-4 border-bottom">
+      <h1>WebStore</h1>
+  </div>
+</div>
 
-<table cellpadding ="10">
+<!-- <label for="site-search">Search the site:</label> -->
+<!-- <input type="search" id="site-search" name="q" aria-label="Search through site content"> -->
+
+<!--<button>Search</button> -->
+
+<table cellpadding="10">
   <tr>
     <th>Product</th>
     <th>Price</th>
@@ -22,4 +31,7 @@
   </tr>
   {% endfor %}
 </table>
+
+
+
 {% endblock %}
