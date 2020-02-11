@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect, url_for, flash
+from flask import render_template, request, redirect, url_for
 from flask_login import login_user, logout_user
 from flask_login import current_user, login_required
 
@@ -41,6 +41,7 @@ def auth_registration_create():
 
     if not form.validate():
         return render_template("auth/regform.html", form = form)
+        
 
     user = User(form.name.data, form.username.data, form.password.data)
   

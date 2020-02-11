@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import PasswordField, StringField
-from wtforms import validators
+from wtforms import PasswordField, StringField, validators, ValidationError
+from application.auth.models import User
   
 class LoginForm(FlaskForm):
     username = StringField("Username")
@@ -17,3 +17,8 @@ class RegistrationForm(FlaskForm):
   
     class Meta:
         csrf = False
+
+    def validate_username(self, username):
+        user = User.query.filter_by(username=username.data).first()
+        if user is not None:
+            raise ValidationError('The username already exists.')
