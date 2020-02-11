@@ -5,9 +5,11 @@ Työn lopputuloksen on tarkoitus toimia ostajan ja myyjän välisenä verkkokaup
 
 ## Toteutetut toiminnallisuudet
 * Käyttäjän rekisteröityminen ja kirjautuminen.
+* Käyttäjätietojen ja listatuiden tuotteiden näyttäminen käyttäjän sivulla. 
 * Tuotteiden lisääminen alustalle.
-* Tuotteiden tietojen muokkaus.
+* Tuotteiden tietojen muokkaus ja tuotteen poistaminen tuotteen listaajan toimesta.
 * Tuotteiden listaaminen.
+
 
 ## Käyttötapaukset
 [linkki](https://github.com/parissak/Verkkokauppa/blob/master/documentation/kayttotapaukset.md)
