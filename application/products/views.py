@@ -20,18 +20,18 @@ def products_index():
 def products_form():
     return render_template("products/new.html", form = ProductForm(), categories = Category.query.all())
 
-# delete
-@app.route("/products/<product_id>_delete/", methods=["POST"])
+# delete product
+@app.route("/products/delete/<product_id>", methods=["POST"])
 @login_required
 def products_delete(product_id):
     product = Product.query.get(product_id)
     db.session.delete(product)
     db.session().commit()
   
-    return redirect(url_for("products_index"))
+    return redirect(url_for("auth_user"))
 
 # change description
-@app.route("/products/<product_id>_change/", methods=["POST"])
+@app.route("/products/change/<product_id>", methods=["POST"])
 @login_required
 def products_set_description(product_id):
 
@@ -42,7 +42,7 @@ def products_set_description(product_id):
         product.description = new
         db.session().commit()
   
-    return redirect(url_for("products_index"))
+    return redirect(url_for("auth_user"))
 
 # post product
 @app.route("/products/", methods=["POST"])
@@ -70,4 +70,4 @@ def products_create():
     db.session().add(product)
     db.session().commit()
 
-    return redirect(url_for("products_index"))
+    return redirect(url_for("auth_user"))

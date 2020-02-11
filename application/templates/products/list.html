@@ -19,21 +19,6 @@
     <td>{{ product.description }}</td>
     <td>{{ product.account.username }}</td>
     <td>{{ product.category.name }}</td>
-
-    <td>
-      <form method="POST" action="{{ url_for('products_set_description', 
-      product_id=product.id) }}">
-        <input type="text" name=newdesc placeholder="insert a new description" />
-        <input type="submit" value=&#9998; />
-      </form>
-    </td>
-
-    <td>
-      <form method="POST" action="{{ url_for('products_delete', 
-      product_id=product.id) }}">
-        <button type="submit" value="Delete">Delete</button>
-      </form>
-    </td>
   </tr>
   {% endfor %}
 </table>
