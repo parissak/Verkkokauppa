@@ -2,6 +2,8 @@
 
 * Käyttäjänä voin kirjautua ja rekisteröityä sivustolle.
 * Käyttäjänä voin tarkastella myynnissä olevia tuotteita.
-* Käyttäjänä voin lisätä tuotteita sivustolle ja vastaavasti poistaa tuotteen sivustolta. 
-* Käyttäjänä voin muuttaa tuotteeni tietoja nimeä lukuunottamatta.
-* Käyttäjänä voin ostaa tai tilata tuotteen alustan kautta.
+
+* Rekisteröityneenä käyttäjänä voin lisätä tuotteita sivustolle ja vastaavasti poistaa lisäämäni tuotteen sivustolta. 
+* Rekisteröityneenä käyttäjänä voin muuttaa tuotteeni kuvausta.
+* Rekisteröityneenä käyttäjänä voin tarkastella profiiliani ja lisäämiäni tuotteita.
+* Rekisteröityneenä käyttäjänä voin ostaa tai tilata tuotteen alustan kautta.
