@@ -11,5 +11,5 @@ class ProductForm(FlaskForm):
         csrf = False
 
 # tobeimplemented
-#class SearchForm(FlaskForm):
-#    search = StringField("Name")
+class SearchForm(FlaskForm):
+    search = StringField("Name")

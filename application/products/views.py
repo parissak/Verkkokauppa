@@ -6,30 +6,26 @@ from application.products.models import Product
 from application.categories.models import Category
 
 from application.products.forms import ProductForm
-#from application.products.forms import SearchForm
+from application.products.forms import SearchForm
 
 from sqlalchemy.sql import text
-
-# searchfield
-#@app.route('/products', methods=['GET','POST'])
-#def search_products():
-#    search = SearchForm(request.form)
-#    if request.method == 'POST':
-#        return search_results(search)
-
-#   return render_template('products/list.html', form=search, products = Product.query.all())
-
-#tobeimplemented
-# search
-#@app.route("/results")
-#def search_results():
-#    return render_template("products/list.html")
-
-
-# list
-@app.route("/products", methods=["GET"])
+ 
+# list & search
+@app.route("/products", methods=["GET", "POST"])
 def products_index():
-    return render_template("products/list.html", products = Product.query.all())
+    if request.method == 'POST':
+        form = SearchForm(request.form)
+        product_name = request.form.get("search")
+
+        if not product_name:
+            result = Product.query.all()
+        else:
+            result = Product.query.filter_by(name=product_name).all() 
+
+    if request.method == 'GET':
+        result = Product.query.all()
+     
+    return render_template("products/list.html", form = SearchForm(), products = result)
     
 # new
 @app.route("/products/new/")

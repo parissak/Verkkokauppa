@@ -4,18 +4,24 @@
 
 <div class="container">
   <div class="pb-2 mt-5 mb-4 border-bottom">
-      <h1>WebStore</h1>
+    <h1>WebStore</h1>
   </div>
 </div>
 
-<!-- <label for="site-search">Search the site:</label> -->
-<!-- <input type="search" id="site-search" name="q" aria-label="Search through site content"> -->
-
-<!--<button>Search</button> -->
+<div class="col-md-4 col-md-offset-0" style="margin-bottom:50px;">
+  <form method="post" action="{{ url_for('products_index') }}">
+    <div class="input-group">
+      <input type="text" name="search" placeholder="Search by title.." class="form-control">
+      <span class="input-group-btn ml-2">
+        <input class="btn btn-primary" type="submit" value="Search">
+      </span>
+    </div>
+  </form>
+</div>
 
 <table cellpadding="10">
   <tr>
-    <th>Product</th>
+    <th>Name</th>
     <th>Price</th>
     <th>Description</th>
     <th>Seller</th>
