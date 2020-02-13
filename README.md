@@ -9,6 +9,7 @@ Työn lopputuloksen on tarkoitus toimia ostajan ja myyjän välisenä verkkokaup
 * Tuotteiden lisääminen alustalle.
 * Tuotteiden tietojen muokkaus ja tuotteen poistaminen tuotteen listaajan toimesta.
 * Tuotteiden listaaminen.
+* Tuotteiden haku nimen perusteella.
 
 
 ## Käyttötapaukset
