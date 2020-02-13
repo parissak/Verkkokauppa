@@ -7,7 +7,7 @@ Tuotteita voi myös etsiä tekstikentän kautta kirjoittamalla halutun tuotenime
 
 ### Rekisteröityminen 
 Rekisteröityminen on mahdollista ylävalikon kohdasta *Register*. Tämä ohjaa käyttäjän sivulle, minkä lomakkeelle syötetään nimi,
-sovelluksessa näkyvä käyttäjänimi ja salasana. Rekisteröityminen tapahtuu paimalla *Register*.
+sovelluksessa näkyvä käyttäjänimi ja salasana. Rekisteröityminen tapahtuu paimalla *Create an account*.
 
 <br> </br>
 
