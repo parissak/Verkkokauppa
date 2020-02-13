@@ -3,12 +3,13 @@
 ## Ei-rekisteröityneelle käyttäjälle
 ### Tuotteiden tarkastelu
 Tuotteiden tarkastelu tapahtuu ylävalikon kohdasta *List products*. Tämän jälkeen sovellus listaa kaikki tuotteet näkyville. 
-Tuotteita voi myös etsiä tekstikentän kautta kirjoittamalla halutun tuotenimen ja painamalla *Search* painiketta. Haetun nimen
-tulee tarkalleen vastata haettavaa tuotenimeä, jotta se löytyy.
+Tuotteita voi myös etsiä tekstikentän kautta kirjoittamalla halutun tuotenimen ja painamalla *Search* painiketta. Haetun nimen tulee tarkalleen vastata haettavaa tuotenimeä, jotta se löytyy.
 
 ### Rekisteröityminen 
 Rekisteröityminen on mahdollista ylävalikon kohdasta *Register*. Tämä ohjaa käyttäjän sivulle, minkä lomakkeelle syötetään nimi,
-sovelluksessa näkyvä käyttäjänimi ja salasana. Rekisteröityminen tapahtuu paimalla *Register*.
+sovelluksessa näkyvä käyttäjänimi ja salasana. Rekisteröityminen tapahtuu paimalla *Create an account*.
+
+<br> </br>
 
 ## Rekisteröityneelle käyttäjälle
 ### Kirjautuminen
@@ -31,7 +32,7 @@ vieressä olevaa painiketta.
 ### Listatun tuotteen poistaminen
 Tuote poistetaan omien sivujen kautta. Tuotteen vieressä on painike *Delete*, mikä poistaa tuotteen.
 
-### Tuotteiden tarkastelu ja haku
+### Tuotteiden tarkastelu
 Rekisteröitynyt käyttäjä tarkastelee ja hakee tuotteita samalla tavalla kuin ei-rekisteröitynyt käyttäjä.
 
 

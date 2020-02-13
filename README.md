@@ -13,8 +13,13 @@ Työn lopputuloksen on tarkoitus toimia ostajan ja myyjän välisenä verkkokaup
 
 
 ## Käyttötapaukset
-[linkki](https://github.com/parissak/Verkkokauppa/blob/master/documentation/kayttotapaukset.md)
+[linkki](https://github.com/parissak/Verkkokauppa/blob/master/documentation/Kayttotapaukset.md)
 
+## Asennusohje
+[linkki](https://github.com/parissak/Verkkokauppa/blob/master/documentation/Asennusohje.md)
+
+## Käyttöohje
+[linkki](https://github.com/parissak/Verkkokauppa/blob/master/documentation/Kayttoohje.md)
 
 ## Tietokantakaavio
 ![](https://github.com/parissak/Verkkokauppa/blob/master/documentation/kuvat/Untitled%20Diagram.jpg)
