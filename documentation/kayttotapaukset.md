@@ -2,7 +2,9 @@
 
 * Käyttäjänä voin kirjautua ja rekisteröityä sivustolle.
 * Käyttäjänä voin tarkastella myynnissä olevia tuotteita.
-
+* Käyttäjänä voin hakea tuotteita. 
+ <br/><br/>
+ 
 * Rekisteröityneenä käyttäjänä voin lisätä tuotteita sivustolle ja vastaavasti poistaa lisäämäni tuotteen sivustolta. 
 * Rekisteröityneenä käyttäjänä voin muuttaa tuotteeni kuvausta.
 * Rekisteröityneenä käyttäjänä voin tarkastella profiiliani ja lisäämiäni tuotteita.
