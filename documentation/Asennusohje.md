@@ -1,8 +1,8 @@
 # Asennusohje
 
 ## Paikallinen asennus
-
-* Ladataan koneelle ohjelma github:in kautta zippinä ja puretaan se haluttuun paikkaan.
+* Oletuksena on, että tietokoneella on tuki Python-kielisten ohjelmien suorittamiseen (vähintään Pythonin versio 3.5) ja  Python-kirjastojen lataamiseen (Pythonin työväline pip).
+* Ladataan sovellus koneelle github:in kautta zippinä ja puretaan se haluttuun paikkaan.
 * Luodaan hakemiston sisälle Python-virtuaaliympäristö komennolla `python3 -m venv venv`.
 * Otetaan virtuaaliympäristö käyttöön komennolla `source venv/bin/activate`.
 * Otetaan Flask-kirjaston käyttöön komennolla `pip install Flask`.
@@ -11,7 +11,7 @@
 * Palvelin voidaan sammuttaa komentorivin kautta painamalla `CTRL+C`.  
 
 ## Asennus Herokuun
-* Ladataan koneelle ohjelma github:in kautta zippinä ja puretaan se haluttuun paikkaan.
+* Ladataan sovellus koneelle github:in kautta zippinä ja puretaan se haluttuun paikkaan.
 * Herokun käyttöön tarvitaan Herokun käyttäjätunnus sekä Herokun työvälineet komentoriville (eli Heroku CLI). 
 * Siirrytään kansioon, mihin projekti on purettu ja luodaan sovellukselle paikka Herokuun komennolla `heroku create haluttunimi`, 
 missä jälkimmäinen teksti on projektin haluttu nimi. 
