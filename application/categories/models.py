@@ -2,11 +2,12 @@ from application import db
 from application.models import Base
 
 from sqlalchemy.sql import text
+from sqlalchemy import event
 
-class Category(Base):
+class Category(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(30), nullable=False)
     products = db.relationship("Product", backref='category', lazy=True)
-
 
 @staticmethod
 def return_id(category_name):    
@@ -18,6 +19,9 @@ def return_id(category_name):
     id = res[0]
     return id
 
-# INSERT INTO Category (id, name) VALUES (1, 'Electronics');
-# INSERT INTO Category (id, name) VALUES (2, 'Clothes');
-# INSERT INTO Category (id, name) VALUES (3, 'Home & Garden');
+@event.listens_for(Category.__table__, 'after_create')
+def insert_initial_values(*args, **kwargs):
+    db.session.add(Category(name='Electronics'))
+    db.session.add(Category(name='Clothes'))
+    db.session.add(Category(name='Home & Garden'))
+    db.session.commit()

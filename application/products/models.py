@@ -3,7 +3,7 @@ from application.models import Base
 
 class Product(Base):
     name = db.Column(db.String(144), nullable=False)
-    price = db.Column(db.Float, nullable=False)
+    price = db.Column(db.Float(2), nullable=False)
     description = db.Column(db.String(144), nullable=False)
 
     account_id = db.Column(db.Integer, db.ForeignKey('account.id'), nullable=False)

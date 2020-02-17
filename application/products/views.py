@@ -83,4 +83,6 @@ def products_create():
     db.session().add(product)
     db.session().commit()
 
+    print("Logging message", flush=True)
+
     return redirect(url_for("auth_user"))

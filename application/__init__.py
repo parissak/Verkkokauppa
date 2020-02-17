@@ -3,9 +3,9 @@ app = Flask(__name__)
 
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import event
-
+ 
 import os
-
+ 
 if os.environ.get("HEROKU"):
     app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL")
 else:
@@ -16,7 +16,6 @@ else:
 db = SQLAlchemy(app)
 
 # sovelluksen toiminnallisuudet
-
 from application import views
 
 from application.categories import models
