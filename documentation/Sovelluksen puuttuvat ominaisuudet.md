@@ -1,0 +1,2 @@
+# Puuttuvat ominaisuudet
+Päivitetään lopussa
