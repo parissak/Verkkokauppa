@@ -20,5 +20,7 @@ Työn lopputuloksen on tarkoitus toimia ostajan ja myyjän välisenä verkkokaup
 
 [Tietokantakaavio](https://github.com/parissak/Verkkokauppa/blob/master/documentation/kuvat/Untitled%20Diagram.jpg)
 
+[Sovelluksen puuttuvat ominaisuudet](https://github.com/parissak/Verkkokauppa/blob/master/documentation/Sovelluksen%20puuttuvat%20ominaisuudet.md)
+
 [Sovellus Herokussa](https://salty-thicket-26582.herokuapp.com/) (rekisteröity testitunnus Herokuun: *Username: hello Password: world*)
 
