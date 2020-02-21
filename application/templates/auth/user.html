@@ -44,7 +44,8 @@
           <form method="POST" action="{{ url_for('products_set_description', product_id=product.id) }}">
             <div class="form-row align-items-center">
               <div class="col">
-                <input type="text" class="form-control form-control-sm" name=newdesc placeholder="insert a new description" />
+                <input type="text" class="form-control form-control-sm" name=newdesc
+                  placeholder="insert a new description" />
               </div>
               <div class="col">
                 <button class="btn btn-outline-secondary btn-sm" type="submit">Submit</button>
@@ -62,10 +63,33 @@
             </div>
           </form>
         </td>
-        
       </tr>
-
       {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<h2>My Orders</h2>
+<div class="table-responsive">
+  <table class="table table-hover table-sm">
+    <thead class="thead-light">
+      <th scope="col">Product name</th>
+      <th scope="col">Product price</th>
+      <th scope="col">Product description</th>
+      <th scope="col">Date ordered</th>
+    </thead>     
+
+      {% for order, product in orders %}
+    <tbody>
+      <tr>
+        <td>{{ product.name }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ order.date_created }}</td>
+      </tr>
+        {% endfor %}
+ 
+  
     </tbody>
   </table>
 </div>

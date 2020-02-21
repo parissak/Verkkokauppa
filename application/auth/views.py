@@ -1,12 +1,14 @@
 from flask import render_template, request, redirect, url_for
-from flask_login import login_user, logout_user
-from flask_login import current_user, login_required
+from flask_login import login_user, logout_user, current_user, login_required
 
 from sqlalchemy.sql import text
 
 from application import app, db
 from application.auth.models import User
 from application.auth.forms import LoginForm, RegistrationForm
+from application.orders.models import Order
+from application.products.models import Product
+
 
 @app.route("/auth/login", methods = ["GET", "POST"])
 def auth_login():
@@ -55,5 +57,10 @@ def auth_registration_create():
 def auth_user():
     u = current_user  
     item_count = User.count_items(current_user.id)
+    order_products = db.session.query(Order, Product).join(Product).join(User).filter(Order.account_id == u.id).all()
 
-    return render_template("auth/user.html", item_count=item_count, user = u)
+    
+    print("hello")
+    print(order_products)
+
+    return render_template("auth/user.html", item_count=item_count, orders = order_products, user = u)
