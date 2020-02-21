@@ -12,6 +12,7 @@ class User(Base):
     password = db.Column(db.String(144), nullable=False)
 
     products = db.relationship("Product", backref='account', lazy=True)
+    orders = db.relationship("Order", backref='account', lazy=True)
 
     def __init__(self, name, username, password):
         self.name = name
