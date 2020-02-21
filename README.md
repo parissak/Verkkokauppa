@@ -12,7 +12,7 @@ Työn lopputuloksen on tarkoitus toimia ostajan ja myyjän välisenä verkkokaup
 * Tuotteiden haku nimen perusteella.
 
 ## Muu materiaali
-[Käyttötapaukset](https://github.com/parissak/Verkkokauppa/blob/master/documentation/Kayttotapaukset.md)
+[Käyttötapaukset ja liittyvät SQL-kyselyt](https://github.com/parissak/Verkkokauppa/blob/master/documentation/Kayttotapaukset.md)
 
 [Asennusohje](https://github.com/parissak/Verkkokauppa/blob/master/documentation/Asennusohje.md)
 
