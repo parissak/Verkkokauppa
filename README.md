@@ -11,24 +11,16 @@ Työn lopputuloksen on tarkoitus toimia ostajan ja myyjän välisenä verkkokaup
 * Tuotteiden listaaminen.
 * Tuotteiden haku nimen perusteella.
 
+## Muu materiaali
+[Käyttötapaukset](https://github.com/parissak/Verkkokauppa/blob/master/documentation/Kayttotapaukset.md)
 
-## Käyttötapaukset
-[linkki](https://github.com/parissak/Verkkokauppa/blob/master/documentation/Kayttotapaukset.md)
+[Asennusohje](https://github.com/parissak/Verkkokauppa/blob/master/documentation/Asennusohje.md)
 
-## Asennusohje
-[linkki](https://github.com/parissak/Verkkokauppa/blob/master/documentation/Asennusohje.md)
+[Käyttöohje](https://github.com/parissak/Verkkokauppa/blob/master/documentation/Kayttoohje.md)
 
-## Käyttöohje
-[linkki](https://github.com/parissak/Verkkokauppa/blob/master/documentation/Kayttoohje.md)
+[Tietokantakaavio](https://github.com/parissak/Verkkokauppa/blob/master/documentation/kuvat/Untitled%20Diagram.jpg)
 
-## Tietokantakaavio
-![](https://github.com/parissak/Verkkokauppa/blob/master/documentation/kuvat/Untitled%20Diagram.jpg)
-
-
-
-## Sovellus Herokussa:
-[linkki](https://salty-thicket-26582.herokuapp.com/)
-
-### Rekisteröity testitunnus 
-Username: hello Password: world
+<br></br>
+[Sovellus Herokussa:](https://salty-thicket-26582.herokuapp.com/)
+(Rekisteröity testitunnus Herokuun: *Username: hello Password: world*)
 
