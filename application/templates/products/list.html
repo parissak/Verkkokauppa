@@ -19,15 +19,15 @@
   </form>
 </div>
 
-{% with messages = get_flashed_messages() %}
-  {% if messages %}
+{% with messages = get_flashed_messages(category_filter=["successful"]) %}
+ 
     {% for message in messages %}
       <div class="alert alert-success alert-dismissible fade show w-25 p-3" role="alert">
         <span>{{ message }}</span>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
       </div>
     {% endfor %}
-  {% endif %}
+ 
 {% endwith %}
 
 <div class="table-responsive">
@@ -40,7 +40,6 @@
         <th scope="col">Seller</th>
         <th scope="col">Category</th>
         <th scope="col"></th>
-
       </tr>
     </thead>
     {% for product in products %}

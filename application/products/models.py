@@ -9,7 +9,7 @@ class Product(Base):
     account_id = db.Column(db.Integer, db.ForeignKey('account.id'), nullable=False)
     category_id = db.Column(db.Integer, db.ForeignKey('category.id'), nullable = False)
 
-    Order = db.relationship("Order", uselist=False, backref="Product")
+    Order = db.relationship("Order", cascade="all,delete", uselist=False, backref="Product")
 
     def __init__(self, name, price, description):
         self.name = name

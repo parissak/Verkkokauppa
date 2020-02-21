@@ -26,7 +26,7 @@ def order_new():
     db.session().add(order)
     db.session().commit()    
 
-    flash("Item ordered succesfully")
+    flash("Item ordered succesfully", "successful")
      
     return redirect(url_for("products_index"))
     
