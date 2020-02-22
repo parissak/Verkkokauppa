@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect, url_for
+from flask import render_template, request, redirect, url_for, flash
 from flask_login import login_user, logout_user, current_user, login_required
 
 from sqlalchemy.sql import text
@@ -20,8 +20,8 @@ def auth_login():
     user = User.query.filter_by(username=form.username.data, password=form.password.data).first()
 
     if not user:
-        return render_template("auth/loginform.html", form = form,
-                               error = "No such username or password")
+        flash("No such username or password", "not_found")
+        return render_template("auth/loginform.html", form = form)
 
     login_user(user)
     return redirect(url_for("index"))
@@ -42,6 +42,7 @@ def auth_registration_create():
     form = RegistrationForm(request.form)
 
     if not form.validate():
+        flash("Please correct the errors in order to continue.")
         return render_template("auth/regform.html", form = form)
         
     user = User(form.name.data, form.username.data, form.password.data)
@@ -58,9 +59,5 @@ def auth_user():
     u = current_user  
     item_count = User.count_items(current_user.id)
     order_products = db.session.query(Order, Product).join(Product).join(User).filter(Order.account_id == u.id).all()
-
-    
-    print("hello")
-    print(order_products)
 
     return render_template("auth/user.html", item_count=item_count, orders = order_products, user = u)

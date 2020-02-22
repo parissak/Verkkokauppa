@@ -3,94 +3,75 @@
 {% block body %}
 <form method="POST" action="{{ url_for('products_create') }}">
 
-	<table>
-		<tr>
-			<td>
-				<b>{{ form.name.label }} </b>
-			</td>
-			<td>
-				{{ form.name}}
-			</td>
-			<td>
-				<ul>
-					{% for error in form.name.errors %}
-					<li>{{ error }}</li>
-					{% endfor %}
-				</ul>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<p>Required. Name must be between 2 and 20 characters long.</p>
-			</td>
-		</tr>
+	<div class="form-group row">
+		<label for="name" class="col-sm-2 col-form-label">{{ form.name.label }}</label>
+		<div class="col-sm-4">
+			{{ form.name(class="form-control", placeholder="Enter name") }}
+			<span>
+				<small id="nameHelpBlock" class="form-text text-muted">
+					Required. Name must be between 2 and 20 characters long.</small>
+			</span>
+		</div>
 
-		<tr>
-			<td>
-				<b>{{ form.price.label }}</b>
-			</td>
-			<td>
-				{{ form.price }}
-			</td>
-			<td>
-				<ul>
-					{% for error in form.price.errors %}
-					<li>{{ error }}</li>
-					{% endfor %}
-				</ul>
-			</td>
+		<row class="align-items-center">
+			{% for error in form.name.errors %}
+			<p class="text-danger">{{ error }} </p>
+			{% endfor %}
+		</row>
+	</div>
 
-		</tr>
-		<tr>
-			<td>
-				<p>Required. Insert a price for the product.</p>
-			</td>
-		</tr>
+	<div class="form-group row">
+		<label for="price" class="col-sm-2 col-form-label">{{ form.price.label }}</label>
+		<div class="col-sm-4">
+			{{ form.price(class="form-control", placeholder="Enter price") }}
+			<span>
+				<small id="nameHelpBlock" class="form-text text-muted">
+					Required. Price must be between 0.01 and 100000 and have max. 2 decimal places.</small>
+			</span>
+		</div>
 
-		<tr>
-			<td>
-				<b>{{ form.description.label }}</b>
-			</td>
-			<td>
-				{{ form.description }}
-			</td>
-			<td>
-				<ul>
-					{% for error in form.description.errors %}
-					<li>{{ error }}</li>
-					{% endfor %}
-				</ul>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<p> Optional. Description must be below 30 characters.</p>
-			</td>
-		</tr>
+		<row class="align-items-center">
+			{% for error in form.price.errors %}
+			<p class="text-danger">{{ error }} </p>
+			{% endfor %}
+		</row>
+	</div>
 
-		<tr>
-			<td>
-				<b>Category</b>
-			</td>
-			<td>
-				<select name="select">
-					{% for category in categories %}
-					<option value="{{category.name}}">{{category.name}}</option>
-					{% endfor %}
-				</select>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<p> Required. Choose a category from the dropdown menu.</p>
-			</td>
-		</tr>
+	<div class="form-group row">
+		<label for="description" class="col-sm-2 col-form-label">{{ form.description.label }}</label>
+		<div class="col-sm-4">
+			{{ form.description(class="form-control", placeholder="Enter description") }}
+			<span>
+				<small id="nameHelpBlock" class="form-text text-muted">
+					Optional. Description must be below 30 characters.</small>
+			</span>
+		</div>
 
-		<tr>
-			<td colspan="2">
-				<input type="submit" value="Add a new product" />
-			<td>
-		</tr>
+		<row class="align-items-center">
+			{% for error in form.description.errors %}
+			<p class="text-danger">{{ error }} </p>
+			{% endfor %}
+		</row>
+	</div>
 
+	<div class="form-group row">
+		<label for="category" class="col-sm-2 col-form-label">Category</label>
+		<div class="col-sm-4">
+			<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="select">
+				{% for category in categories %}
+				<option value="{{category.name}}">{{category.name}}</option>
+				{% endfor %}
+			</select>
+			<span>
+				<small id="nameHelpBlock" class="form-text text-muted">
+					Required. Choose a category from the dropdown menu.</small>
+			</span>
+		</div>
+	</div>
+
+	<div class="form-group row mt-5">
+		<button type="submit" class="btn btn-primary">Add a new product</button>
+	</div>
 </form>
+
 {% endblock %}
