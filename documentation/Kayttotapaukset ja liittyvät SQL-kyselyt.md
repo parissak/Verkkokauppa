@@ -39,4 +39,5 @@ FROM account WHERE account.id = ?;`
 
 
 * Rekisteröityneenä käyttäjänä voin ostaa tai tilata tuotteen alustan kautta.
-``
+
+`INSERT INTO Order (date_created, date_modified, shipped, account_id, product_id) VALUES (CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, ?, ?, ?)`
