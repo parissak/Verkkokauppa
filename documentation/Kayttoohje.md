@@ -35,5 +35,5 @@ Tuote poistetaan omien sivujen kautta. Tuotteen vieressä on painike *Delete*, m
 ### Tuotteiden tarkastelu
 Rekisteröitynyt käyttäjä tarkastelee ja hakee tuotteita samalla tavalla kuin ei-rekisteröitynyt käyttäjä.
 
-
-
+### Tuotteen tilaaminen
+Tuote tilataan tuotteiden listauksen kautta painamalla halutun tuotteen vieressä näkyvää painiketta *Order*.
