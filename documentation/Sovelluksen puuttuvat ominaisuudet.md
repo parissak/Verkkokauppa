@@ -1,10 +1,6 @@
-# Puuttuvat ominaisuudet
-* **Admin-roolin puuttuminen**: sovelluksessa ei ole admin-roolia, joten mikäli esimerkiksi sopimaton tuote halutaan poistaa alustalta, joudutaan se tekemään SQL-kyselynä.
-
-# Jatkokehitysideat
-* **Kuvien lisääminen**: sovelluksen nykyisessä versiossa ei ole mahdollisuutta lisätä tuotteiden yhteyteen kuvaa. 
-
-
-PÄIVITETÄÄN LOPUSSA
-
-
+# Sovelluksen puuttuvat ominaisuudet ja ongelmakohdat
+* **Admin-roolin puuttuminen**: Sovelluksessa ei ole admin-roolia, joten mikäli esimerkiksi sopimaton tuote halutaan poistaa alustalta, joudutaan se tekemään SQL-kyselynä.
+* **Kuvien lisääminen**: Sovelluksen nykyisessä versiossa ei ole mahdollisuutta lisätä tuotteiden yhteyteen kuvaa. 
+* **Ostoskorin toteutus**: Nykyisessä versiossa ei ole ostoskoria, minkä takia tuotteen tilataan suoraan listauksesta. Ostoskorin kautta tilaaminen parantaisi sovelluksen käytettävyyttä, sillä tuotteen tilauksessa olisi varmistava vaihe. Ostoskorin voisi toteuttaa joko erillisten tietokantataulujen kautta, jolloin tuotteet tallennettaisiin sinne, tai sessioon liittyen. 
+* **Tuotteen päivitys**: Kun käyttäjä päivittää tai poistaa tuotteen, vaikuttaa muutos välittömästi myös liittyviin tilauksiin.  Tähän ei ole välttämättä tilanteen korjaavaa muutosta, sillä käyttäjän tulee kuitenkin pystyä hallinnoimaan tuotettaan. Eräs parannus sovellukseen olisi jonkinlainen viesti-toiminnallisuus, jonka kautta esimerkiksi poistuvan tuotteen tilaaja saisi viestin asiasta. Toisaalta tuotteeseen voisi yhdistää erillisen "description"-taulun, johon päivitettäisiin tuotteen kuvaus ja sen muutokset. 
+* **Maksujärjestelyn puuttuminen**: Maksujärjestely hoituisi helpoiten jättämällä se käyttäjien väliseksi asiaksi ja parantamalla edellä mainittua viesti-toiminnallisuutta.
