@@ -1,8 +1,5 @@
 from flask import render_template, request, redirect, url_for, flash
 from flask_login import login_user, logout_user, current_user, login_required
-
-from sqlalchemy.sql import text
-
 from application import app, db
 from application.auth.models import User
 from application.auth.forms import LoginForm, RegistrationForm
@@ -24,6 +21,7 @@ def auth_login():
         return render_template("auth/loginform.html", form = form)
 
     login_user(user)
+
     return redirect(url_for("index"))
 
 @app.route("/auth/logout")
@@ -40,24 +38,33 @@ def auth_registration_form():
 @app.route("/auth/registration/", methods=["POST"])
 def auth_registration_create():
     form = RegistrationForm(request.form)
-
+        
     if not form.validate():
         flash("Please correct the errors in order to continue.")
         return render_template("auth/regform.html", form = form)
-        
-    user = User(form.name.data, form.username.data, form.password.data)
-  
-    db.session().add(user)
-    db.session().commit()
 
+    # checks if username exists
+    username_exists = User.query.filter_by(username=form.username.data).first()
+    if username_exists:
+        flash("Username exists, please choose another one.")
+        return render_template("auth/regform.html", form = form)
+        
+    new_user = User(form.name.data, form.username.data, form.password.data)
+  
+    db.session().add(new_user)
+    try:
+        db.session().commit()       
+    except:
+        db.session.rollback() 
+    
     return redirect(url_for("index"))
 
 # return user page
 @app.route("/auth/user")
 @login_required
 def auth_user():
-    u = current_user  
+    user = current_user  
     item_count = User.count_items(current_user.id)
-    order_products = db.session.query(Order, Product).join(Product).join(User).filter(Order.account_id == u.id).all()
+    order_products = db.session.query(Order, Product).join(Product).join(User).filter(Order.account_id == user.id).all()
 
-    return render_template("auth/user.html", item_count=item_count, orders = order_products, user = u)
+    return render_template("auth/user.html", item_count=item_count, orders = order_products, user = user)

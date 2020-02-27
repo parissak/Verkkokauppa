@@ -1,15 +1,13 @@
-from flask import redirect, render_template, request, url_for
+from flask import redirect, render_template, request, url_for, flash
 from flask_login import current_user, login_required
-
 from application import app, db
 from application.products.models import Product
 from application.categories.models import Category
 from application.orders.models import Order
-
+from application.auth.models import User
 from application.products.forms import ProductForm
 from application.products.forms import SearchForm
 
-from sqlalchemy.sql import text
  
 # list & search
 @app.route("/products", methods=["GET", "POST"])
@@ -35,30 +33,45 @@ def products_form():
     return render_template("products/new.html", form = ProductForm(), categories = Category.query.all())
 
 # delete product
-@app.route("/products/delete/<product_id>", methods=["POST"])
+@app.route("/products/delete/", methods=["POST"])
 @login_required
-def products_delete(product_id):
-    product = Product.query.get(product_id)
-    id = product_id
- 
-    Order.query.filter_by(product_id=id).delete()
-
-    db.session.delete(product)
-    db.session().commit()
+def products_delete():
+    id = request.form.get("delete_id")
+    product = Product.query.get(id)
+    
+    if product.account_id == current_user.id:
+        Order.query.filter_by(product_id=product.id).delete()  
+        db.session.delete(product)
+        try:
+            db.session().commit()
+        except:
+            db.session.rollback()
   
     return redirect(url_for("auth_user"))
 
 # change description
-@app.route("/products/change/<product_id>", methods=["POST"])
+@app.route("/products/change/", methods=["POST"])
 @login_required
-def products_set_description(product_id):
-
-    product = Product.query.get(product_id)
+def products_set_description():
+    id = request.form.get("change_id")
     new = request.form.get("newdesc")
-    
-    if new:
+
+    # validate new description lenght
+    if len(new) > 45:
+        flash("New description must be below 45 characters.", "long")
+        item_count = User.count_items(current_user.id)
+        order_products = db.session.query(Order, Product).join(Product).join(User).filter(Order.account_id == current_user.id).all()
+        return render_template("auth/user.html", item_count=item_count, orders = order_products, user = current_user)
+
+    product = Product.query.get(id)    
+
+    if new and product.account_id == current_user.id:
         product.description = new
-        db.session().commit()
+
+        try:
+            db.session().commit()
+        except:
+            db.session.rollback()
   
     return redirect(url_for("auth_user"))
 
@@ -69,25 +82,24 @@ def products_create():
     form = ProductForm(request.form)
 
     if not form.validate():
-        return render_template("products/new.html", form = form)
+        return render_template("products/new.html", form = form, categories = Category.query.all())
 
     # selection from form & dropdown list
     category_name = request.form.get("select")
 
-    # get id from name query 
-    stmt = text("SELECT * FROM Category" 
-    " WHERE name = :x").params(x = category_name)   
-    res = db.engine.execute(stmt).fetchone()
-    category_id = res[0]
+    # get category
+    category = Category.query.filter_by(name=category_name).first()
 
     product = Product(form.name.data, form.price.data, 
     form.description.data)
     product.account_id = current_user.id
-    product.category_id = category_id
+    product.category_id = category.id
 
     db.session().add(product)
-    db.session().commit()
 
-    print("Logging message", flush=True)
-
+    try:
+        db.session().commit()
+    except:
+        db.session.rollback()
+  
     return redirect(url_for("auth_user"))

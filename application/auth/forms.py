@@ -17,8 +17,3 @@ class RegistrationForm(FlaskForm):
   
     class Meta:
         csrf = False
-
-    def validate_username(self, username):
-        user = User.query.filter_by(username=username.data).first()
-        if user is not None:
-            raise ValidationError('The username already exists.')

@@ -20,15 +20,13 @@
 </div>
 
 {% with messages = get_flashed_messages(category_filter=["successful"]) %}
- 
-    {% for message in messages %}
+     {% for message in messages %}
       <div class="alert alert-success alert-dismissible fade show w-25 p-3" role="alert">
         <span>{{ message }}</span>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
       </div>
     {% endfor %}
- 
-{% endwith %}
+ {% endwith %}
 
 <div class="table-responsive">
   <table class="table table-hover">

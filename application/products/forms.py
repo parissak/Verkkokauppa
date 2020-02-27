@@ -16,7 +16,7 @@ class ProductForm(FlaskForm):
     name = StringField("Product name", [validators.Length(min=2, max=20)])
     price = CustomDecimalField("Price", validators=[validators.NumberRange(min=0.009, max=100000, 
     message="Price must be between 0.01 and 100000")])
-    description = StringField("Description", [validators.Length(max=30)])
+    description = StringField("Description", [validators.Length(max=45)])
  
     class Meta:
         csrf = False

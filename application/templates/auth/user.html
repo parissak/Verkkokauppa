@@ -22,6 +22,15 @@
 <h2>My Products</h2>
 <p>Selling {{ item_count }} items</p>
 
+{% with messages = get_flashed_messages(category_filter=["long"]) %}
+{% for message in messages %}
+<div class="alert alert-danger alert-dismissible fade show w-50 p-3" role="alert">
+  <span>{{ message }}</span>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
+</div>
+{% endfor %}
+{% endwith %}
+
 <div class="table-responsive">
   <table class="table table-hover table-sm">
     <thead class="thead-light">
@@ -41,24 +50,26 @@
         <td>{{ product.category.name }}</td>
 
         <td>
-          <form method="POST" action="{{ url_for('products_set_description', product_id=product.id) }}">
+          <form method="POST" action="{{ url_for('products_set_description') }}">
             <div class="form-row align-items-center">
               <div class="col">
-                <input type="text" class="form-control form-control-sm" name=newdesc
+                <input type="text" class="form-control form-control-sm" name="newdesc"
                   placeholder="insert a new description" />
               </div>
               <div class="col">
-                <button class="btn btn-outline-secondary btn-sm" type="submit">Submit</button>
+                <button class="btn btn-outline-secondary btn-sm" type="submit" name="change_id"
+                  value="{{ product.id }}">Submit</button>
               </div>
             </div>
           </form>
         </td>
 
         <td>
-          <form method="POST" action="{{ url_for('products_delete', product_id=product.id) }}">
+          <form method="POST" action="{{ url_for('products_delete') }}">
             <div class="form-row align-items-center">
               <div class="col">
-                <button class="btn btn-outline-danger btn-sm" type="submit" value="Delete">Delete</button>
+                <button class="btn btn-outline-danger btn-sm" type="submit" name="delete_id"
+                  value="{{ product.id }}">Delete</button>
               </div>
             </div>
           </form>
@@ -77,9 +88,9 @@
       <th scope="col">Product price</th>
       <th scope="col">Product description</th>
       <th scope="col">Date ordered</th>
-    </thead>     
+    </thead>
 
-      {% for order, product in orders %}
+    {% for order, product in orders %}
     <tbody>
       <tr>
         <td>{{ product.name }}</td>
@@ -87,9 +98,9 @@
         <td>{{ product.description }}</td>
         <td>{{ order.date_created }}</td>
       </tr>
-        {% endfor %}
- 
-  
+      {% endfor %}
+
+
     </tbody>
   </table>
 </div>
