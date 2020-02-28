@@ -13,6 +13,7 @@
 `SELECT * FROM product WHERE product.name = ?;`
 
 * Käyttäjänä näen tilatuimpia tuotteita.
+
 `Select Product.name FROM Order JOIN Product on Product.id = product_id JOIN Account ON account.id = product.account_id GROUP BY product.id ORDER BY COUNT(product.id) DESC LIMIT 3;`
 
  <br/><br/>
@@ -26,6 +27,7 @@
 `INSERT INTO Product ('date_created', 'name', 'price', 'description', 'account_id', 'category_id') VALUES (CURRENT_TIMESTAMP, ?, ?, ?, ?);`
 
 * Rekisteröityneenä käyttäjänä voin poistaa lisäämäni tuotteen sivustolta.
+
 `DELETE FROM Order WHERE Order.product_id = ?;`
 `DELETE FROM Product WHERE product.id = ?;`
 
