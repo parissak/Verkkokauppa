@@ -17,12 +17,12 @@ Kirjautuminen tapahtuu ylävalikon *Login* kautta. Lomakkeelle tulee syöttää 
 
 ### Omien tietojen tarkastelu
 Omia käyttäjätietoja ja listattuja tuotteita tarkastellaan ylävalikon *My page* kautta. Tämä sivu listaa oleelliset 
-käyttäjätiedot sekä käyttäjän listaamat tuotteet.
+käyttäjätiedot sekä käyttäjän listaamat ja tilaamat tuotteet.
 
 ### Tuotteen listaaminen myyntiin
 Tuote asetetaan myyntiin ylävalikon kohdan *Sell* kautta. Avautuneelle lomakkeelle syötetään tuotteen nimi, kuvaus, hinta ja
 kategoria. Vaadittuja syötteitä ovat tuotteen nimi, hinta ja kategoria. Tuotteen nimen tulee olla 2-20 merkin mittainen. 
-Kuvauksen, mikä on vapaaehtoinen, tulee olla alle 30 merkin mittainen. Kategoria valitaan pudotusvalikosta. Kategoriat ovat
+Kuvauksen, mikä on vapaaehtoinen, tulee olla alle 46 merkin mittainen. Kategoria valitaan pudotusvalikosta. Kategoriat ovat
 ennalta määriteltyjä.
 
 ### Listatun tuotteen kuvauksen muokkaaminen
