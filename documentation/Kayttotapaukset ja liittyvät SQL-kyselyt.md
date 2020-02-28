@@ -25,8 +25,8 @@
 
 `INSERT INTO Product ('date_created', 'name', 'price', 'description', 'account_id', 'category_id') VALUES (CURRENT_TIMESTAMP, ?, ?, ?, ?);`
 
-* Rekisteröityneenä käyttäjänä voin poistaa lisäämäni tuotteen sivustolta. 
-
+* Rekisteröityneenä käyttäjänä voin poistaa lisäämäni tuotteen sivustolta.
+`DELETE FROM Order WHERE Order.product_id = ?;`
 `DELETE FROM Product WHERE product.id = ?;`
 
 * Rekisteröityneenä käyttäjänä voin muuttaa tuotteeni kuvausta.
