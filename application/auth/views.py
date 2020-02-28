@@ -64,7 +64,10 @@ def auth_registration_create():
 @login_required
 def auth_user():
     item_count = User.count_items(current_user.id)
-    order_count = User.count_orders(current_user.id)
-    order_products = db.session.query(Order, Product).join(Product).join(User).filter(Order.account_id == current_user.id).all()
+    order_products = db.session.query(Order, Product).\
+        join(Product).\
+        join(User).\
+        filter(Order.account_id == current_user.id).all()
+    order_count = len(order_products)
 
     return render_template("auth/user.html", item_count=item_count, order_count = order_count, orders = order_products, user = current_user)

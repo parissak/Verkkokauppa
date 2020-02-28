@@ -38,8 +38,10 @@
       <th scope="col">Price</th>
       <th scope="col">Description</th>
       <th scope="col">Category</th>
+      <th scope="col">Date created</th>
       <th scope="col"></th>
       <th scope="col"></th>
+ 
     </thead>
     {% for product in user.products %}
     <tbody>
@@ -48,6 +50,7 @@
         <td>{{ product.price }}</td>
         <td>{{ product.description }}</td>
         <td>{{ product.category.name }}</td>
+        <td>{{ product.date_created }}</td>
 
         <td>
           <form method="POST" action="{{ url_for('products_set_description') }}">
