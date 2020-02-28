@@ -7,7 +7,7 @@ CREATE TABLE User (
 	PRIMARY KEY (id)
 )
 
-CREATE TABLE product (
+CREATE TABLE Product (
 	id INTEGER NOT NULL, 
 	date_created DATETIME, 
 	name VARCHAR(144) NOT NULL, 
@@ -30,7 +30,7 @@ CREATE TABLE Order (
 	FOREIGN KEY(product_id) REFERENCES product (id)
 )
 
-CREATE TABLE category (
+CREATE TABLE Category (
 	id INTEGER NOT NULL, 
 	name VARCHAR(30) NOT NULL, 
 	PRIMARY KEY (id)
