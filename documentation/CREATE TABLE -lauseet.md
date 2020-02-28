@@ -5,7 +5,7 @@ CREATE TABLE User (
 	username VARCHAR(144) NOT NULL, 
 	password VARCHAR(144) NOT NULL, 
 	PRIMARY KEY (id)
-)
+);
 
 CREATE TABLE Product (
 	id INTEGER NOT NULL, 
@@ -18,7 +18,7 @@ CREATE TABLE Product (
 	PRIMARY KEY (id), 
 	FOREIGN KEY(user_id) REFERENCES user (id), 
 	FOREIGN KEY(category_id) REFERENCES category (id)
-)
+);
 
 CREATE TABLE Order (
 	id INTEGER NOT NULL, 
@@ -28,10 +28,10 @@ CREATE TABLE Order (
 	PRIMARY KEY (id), 
 	FOREIGN KEY(user_id) REFERENCES user (id), 
 	FOREIGN KEY(product_id) REFERENCES product (id)
-)
+);
 
 CREATE TABLE Category (
 	id INTEGER NOT NULL, 
 	name VARCHAR(30) NOT NULL, 
 	PRIMARY KEY (id)
-)
+);
