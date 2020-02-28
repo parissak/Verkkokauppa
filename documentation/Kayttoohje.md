@@ -6,8 +6,7 @@ Tuotteiden tarkastelu tapahtuu ylävalikon kohdasta *List products*. Tämän jä
 Tuotteita voi myös etsiä tekstikentän kautta kirjoittamalla halutun tuotenimen ja painamalla *Search* painiketta. Haetun nimen tulee tarkalleen vastata haettavaa tuotenimeä, jotta se löytyy.
 
 ### Rekisteröityminen 
-Rekisteröityminen on mahdollista ylävalikon kohdasta *Register*. Tämä ohjaa käyttäjän sivulle, minkä lomakkeelle syötetään nimi,
-sovelluksessa näkyvä käyttäjänimi ja salasana. Rekisteröityminen tapahtuu paimalla *Create an account*.
+Rekisteröityminen on mahdollista ylävalikon kohdasta *Register*. Tämä ohjaa käyttäjän sivulle, minkä lomakkeelle syötetään nimi, sovelluksessa näkyvä käyttäjänimi ja salasana. Näiden tietojen tulee olla 2-20 merkin mittaisia. Rekisteröityminen tapahtuu paimalla *Create an account*.
 
 <br> </br>
 
