@@ -1,16 +1,17 @@
 # Verkkokauppa
 
 ## Tarkoitus
-Työn lopputuloksen on tarkoitus toimia käyttäjien välisenä verkkokauppa-alustana. Alustan kautta myyjä voisi ilmoittaa tuotteen myyntiin ja vastaavasti asiakas tilata sen. Alusta siis jäljittelee esimerkiksi Ebay:n vastaavaa - ilman huutokaupan ominaisuutta. 
+Työn lopputuloksen on tarkoitus toimia käyttäjien välisenä verkkokauppa-alustana. Alustan kautta myyjä voisi ilmoittaa tuotteen myyntiin ja vastaavasti asiakas tehdä tilauksen siihen. Alusta siis jäljittelee esimerkiksi Ebay:n vastaavaa - ilman huutokaupan ominaisuutta. 
 
 ## Toteutetut toiminnallisuudet
 * Käyttäjän rekisteröityminen ja kirjautuminen.
-* Käyttäjätietojen ja listatuiden tuotteiden näyttäminen käyttäjän sivulla. 
+* Käyttäjätietojen ja listatuiden tuotteiden ja tilauksien näyttäminen käyttäjän sivulla. 
 * Tuotteiden lisääminen alustalle.
 * Tuotteiden tietojen muokkaus ja tuotteen poistaminen tuotteen listaajan toimesta.
 * Tuotteiden listaaminen.
 * Tuotteiden haku nimen perusteella.
 * Tuotteen tilaaminen.
+* Yhteenvetokyselyt myydyimmistä tuotteista ja käyttäjäkohtaisista tiedoista.
 
 ## Muu materiaali
 [Käyttötapaukset ja liittyvät SQL-kyselyt](https://github.com/parissak/Verkkokauppa/blob/master/documentation/Kayttotapaukset%20ja%20liittyv%C3%A4t%20SQL-kyselyt.md)
