@@ -16,7 +16,7 @@ def products_index():
 
     # get three most ordered
     stmt = text(
-        'Select product.name AS thename FROM "order" '
+        'Select product.name FROM "order" '
         "JOIN Product on Product.id = product_id "
         "JOIN Account ON account.id = product.account_id "
         "GROUP BY product.id "

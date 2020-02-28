@@ -38,12 +38,3 @@ class User(Base):
         res = db.engine.execute(stmt).fetchone()
         item_count = res[0]
         return item_count
-
-    @staticmethod
-    def count_orders(users_id):
-        stmt = text("SELECT COUNT(\"order\".id) FROM \"Order\"" 
-        " JOIN Account ON account_id = account.id WHERE" 
-        " Account_id = :x").params(x = users_id)
-        res = db.engine.execute(stmt).fetchone()
-        order_count = res[0]
-        return order_count
