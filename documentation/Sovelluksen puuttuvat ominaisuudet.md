@@ -6,3 +6,4 @@
 * **Maksujärjestelyn puuttuminen**: Maksujärjestely hoituisi helpoiten jättämällä se käyttäjien väliseksi asiaksi ja esimerkiksi kehittämällä edellä mainittu viesti-toiminnallisuus.
 * **Sivutuksen lisääminen muille kohteille**: Sivutus on nykyisessä versiossa käytössä vain tuotteiden listauksessa. Sen voisi lisätä myös muihin kohteisiin joissa asioita listataan.  
 * **Tuotteiden haku**: Tuotteiden haussa tehdään yksinkertainen kysely, jonka takia käytetyn nimen tulee täsmälleen vastata tietokannassa olevia nimiä.
+* **Tuotteiden tarkastelu erillisellä sivulla**: Tuotekohtaiset sivut mahdollistaisivat tuotetietojen paremman näkymisen niiden ollessa pitkiä ja olisi muutenkin parempi ratkaisu kokonaisuutena.
