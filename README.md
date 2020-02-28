@@ -24,7 +24,7 @@ Työn lopputuloksen on tarkoitus toimia käyttäjien välisenä verkkokauppa-alu
 
 [CREATE TABLE -lauseet](https://github.com/parissak/Verkkokauppa/blob/master/documentation/CREATE%20TABLE%20-lauseet.md)
 
-[Sovelluksen puuttuvat ominaisuudet ja ongelmakohdat](https://github.com/parissak/Verkkokauppa/blob/master/documentation/Sovelluksen%20puuttuvat%20ominaisuudet.md)
+[Puuttuvat ominaisuudet, kehitysideat ja ongelmakohdat](https://github.com/parissak/Verkkokauppa/blob/master/documentation/Sovelluksen%20puuttuvat%20ominaisuudet.md)
 
 [Sovellus Herokussa](https://salty-thicket-26582.herokuapp.com/) (rekisteröity testitunnus Herokuun: *Username: hello Password: world*)
 
