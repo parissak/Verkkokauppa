@@ -1,4 +1,4 @@
-# Sovelluksen puuttuvat ominaisuudet ja ongelmakohdat
+# Sovelluksen puuttuvat ominaisuudet, kehitysideat ja ongelmakohdat
 * **Admin-roolin puuttuminen**: Sovelluksessa ei ole admin-roolia, joten mikäli esimerkiksi sopimaton tuote halutaan poistaa alustalta, joudutaan se tekemään SQL-kyselynä.
 * **Kuvien lisääminen**: Sovelluksen nykyisessä versiossa ei ole mahdollisuutta lisätä tuotteiden yhteyteen kuvaa. 
 * **Ostoskorin toteutus**: Nykyisessä versiossa ei ole ostoskoria, minkä takia tuotteen tilataan suoraan listauksesta. Ostoskorin kautta tilaaminen parantaisi sovelluksen käytettävyyttä, sillä tuotteen tilauksessa olisi varmistava vaihe. Ostoskorin voisi toteuttaa joko erillisten tietokantataulujen kautta, jolloin tuotteet tallennettaisiin sinne, tai sessioon liittyen. 
