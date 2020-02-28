@@ -7,11 +7,28 @@ from application.orders.models import Order
 from application.auth.models import User
 from application.products.forms import ProductForm
 from application.products.forms import SearchForm
+from sqlalchemy.sql import text
 
  
 # list & search
 @app.route("/products", methods=["GET", "POST"])
-def products_index():
+def products_index(): 
+
+    # get three most ordered 
+    stmt = text("Select product.name AS thename FROM \"order\" " 
+    "JOIN Product on Product.id = product_id "
+    "JOIN Account ON account.id = product.account_id "
+    "GROUP BY product.id "
+    "ORDER BY COUNT(product.id) "
+    "DESC LIMIT 3;")
+    res = db.engine.execute(stmt)
+    items = res
+    top_three = ""
+    count = 0    
+    for x in items:
+        count += 1
+        top_three += str(count) + ". " +str(x[0]) + " "    
+   
     if request.method == 'POST':
         form = SearchForm(request.form)
         product_name = request.form.get("search")
@@ -24,7 +41,7 @@ def products_index():
     if request.method == 'GET':
         result = Product.query.all()
      
-    return render_template("products/list.html", form = SearchForm(), products = result)
+    return render_template("products/list.html", form = SearchForm(), products = result, top_three = top_three)
     
 # new
 @app.route("/products/new/")
@@ -60,8 +77,9 @@ def products_set_description():
     if len(new) > 45:
         flash("New description must be below 45 characters.", "long")
         item_count = User.count_items(current_user.id)
+        order_count = User.count_orders(current_user.id)
         order_products = db.session.query(Order, Product).join(Product).join(User).filter(Order.account_id == current_user.id).all()
-        return render_template("auth/user.html", item_count=item_count, orders = order_products, user = current_user)
+        return render_template("auth/user.html", item_count=item_count, order_count = order_count, orders = order_products, user = current_user)
 
     product = Product.query.get(id)    
 

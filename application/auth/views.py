@@ -40,20 +40,20 @@ def auth_registration_create():
     form = RegistrationForm(request.form)
         
     if not form.validate():
-        flash("Please correct the errors in order to continue.")
+        flash("Please correct the errors in order to continue.", "danger")
         return render_template("auth/regform.html", form = form)
 
     # checks if username exists
     username_exists = User.query.filter_by(username=form.username.data).first()
     if username_exists:
-        flash("Username exists, please choose another one.")
+        flash("Username exists, please choose another one.", "danger")
         return render_template("auth/regform.html", form = form)
         
     new_user = User(form.name.data, form.username.data, form.password.data)
   
     db.session().add(new_user)
     try:
-        db.session().commit()       
+        db.session().commit()      
     except:
         db.session.rollback() 
     
@@ -63,8 +63,8 @@ def auth_registration_create():
 @app.route("/auth/user")
 @login_required
 def auth_user():
-    user = current_user  
     item_count = User.count_items(current_user.id)
-    order_products = db.session.query(Order, Product).join(Product).join(User).filter(Order.account_id == user.id).all()
+    order_count = User.count_orders(current_user.id)
+    order_products = db.session.query(Order, Product).join(Product).join(User).filter(Order.account_id == current_user.id).all()
 
-    return render_template("auth/user.html", item_count=item_count, orders = order_products, user = user)
+    return render_template("auth/user.html", item_count=item_count, order_count = order_count, orders = order_products, user = current_user)
