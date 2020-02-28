@@ -18,6 +18,7 @@
 `Select Product.name FROM Order JOIN Product on Product.id = product_id JOIN Account ON account.id = product.account_id GROUP BY product.id ORDER BY COUNT(product.id) DESC LIMIT 3;`
 
 
+
 ## Rekisteröitynyt käyttäjä
  * Rekisteröityneenä käyttäjänä voin kirjautua sivustolle.
 
