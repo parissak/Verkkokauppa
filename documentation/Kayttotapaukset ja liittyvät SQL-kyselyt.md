@@ -1,4 +1,5 @@
 # Käyttötapaukset
+## Rekisteröitymätön ja rekisteröitynyt käyttäjä
 
 * Käyttäjänä voin rekisteröityä sivustolle.
 
@@ -12,12 +13,12 @@
 
 `SELECT * FROM product WHERE product.name = ?;`
 
-* Käyttäjänä näen tilatuimpia tuotteita.
+* Käyttäjänä tai rekisteröityneenä käyttäjänä näen tilatuimpia tuotteita.
 
 `Select Product.name FROM Order JOIN Product on Product.id = product_id JOIN Account ON account.id = product.account_id GROUP BY product.id ORDER BY COUNT(product.id) DESC LIMIT 3;`
 
- <br/><br/>
- 
+
+## Rekisteröitynyt käyttäjä
  * Rekisteröityneenä käyttäjänä voin kirjautua sivustolle.
 
 `SELECT account.id FROM account WHERE account.username = ? AND account.password = ?;`
