@@ -1,5 +1,4 @@
 CREATE TABLE User (
-
 	id INTEGER NOT NULL, 
 	date_created DATETIME, 
 	name VARCHAR(144) NOT NULL, 
